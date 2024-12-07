@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+recursive-include gluepy_ui/web/core/templates *
+recursive-include gluepy_ui/web/core/static *
+recursive-include requirements *.txt 
