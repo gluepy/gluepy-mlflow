@@ -1,0 +1,4 @@
+pre-commit~=2.20.0
+model-bakery~=1.18.0
+flake8-mypy~=17.8.0
+flake8~=6.0.0
