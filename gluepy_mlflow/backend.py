@@ -94,7 +94,6 @@ class MLFlowBackend(BaseOpsBackend):
         """Logs a dictionary of parameters to MLFlow."""
         for key, value in param_dict.items():
             key = f"{prefix}.{key}" if prefix else key
-            print(key)
             if isinstance(value, (str, int, float, bool)):
                 self.log_param(key, value)
             elif isinstance(value, datetime):
