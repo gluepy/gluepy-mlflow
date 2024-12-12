@@ -10,7 +10,7 @@ def read_requirements(filename: str) -> list[str]:
 
 # Get version from __init__.py
 def get_version():
-    init_file = Path(__file__).parent / 'gluepy_ui' / '__init__.py'
+    init_file = Path(__file__).parent / 'gluepy_mlflow' / '__init__.py'
     with open(init_file, 'r') as f:
         version_line = [line for line in f.readlines() if line.startswith('VERSION')][0]
         return version_line.split('=')[-1].strip().strip('"\'')
@@ -20,9 +20,9 @@ install_requires = read_requirements('base.txt')
 version = get_version()
 
 setup(
-    name="gluepy-ui",
+    name="gluepy-mlflow",
     version=version,
-    description="UI interface for GluePy operations",
+    description="MLFlow integration for Gluepy",
     author="Marcus Lind",
     packages=find_packages(),
     include_package_data=True,
@@ -31,8 +31,6 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
-        "Framework :: Django",
-        "Framework :: Django :: 5.1",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
@@ -45,11 +43,4 @@ setup(
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
-    package_data={
-        'gluepy_ui': [
-            'web/core/templates/*.html',
-            'web/core/templates/core/*.html',
-            'web/core/static/**/*',
-        ],
-    },
 ) 
